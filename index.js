@@ -76,11 +76,25 @@ finalScore(inning, 9) might return:
 
 */ 
 
-function finalScore(/*code Here*/){
+function finalScore(inning, nine){
+  let game = {
+    "hometeam": 0,
+    "awayteam": 0.
+  }
+  function inning(){
 
-  /*Code Here*/
+    for (let i = 0; i < nine i++){
 
+      game.hometeam += points;
+      game.awayteam += points;
+    }
+
+
+  }
+
+  return game;
 }
+console.log(finalScore(inning,9));
 
 /* Task 4: 
 
