@@ -68,7 +68,8 @@ function inning(){
 
 /* Task 3: finalScore()
 
-Write a higher order function called `finalScore` that accepts the callback function `inning` (from above) and a number of innings and and returns the final score of the game in the form of an object.
+Write a higher order function called `finalScore` that accepts the callback function `inning` 
+(from above) and a number of innings and and returns the final score of the game in the form of an object.
 
 For example, 
 
@@ -80,17 +81,16 @@ finalScore(inning, 9) might return:
 
 */ 
 
-function finalScore(cb, inning){
+function finalScore(callback, inning){
   let homeScore = 0
   let awayScore = 0
   
   for (let i = 0; i < inning; i++){
-    homeScore += cb()
-    awayScore += cb()
+    homeScore += callback() // += : homeScore = homeScore plus cb // 
+    awayScore += callback()
   } 
   return {
     Home: homeScore,
-  
     Away: awayScore,
      }
   
