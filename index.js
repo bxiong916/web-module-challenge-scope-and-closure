@@ -119,3 +119,25 @@ and returns the score at each pont in the game, like so:
 
 Final Score: 6 - 10 */
 
+function scoreboard(callback, innings) {
+  let inningtext = ['1st Inning:', '2nd Inning:', '3rd Inning:', '4th Inning:', '5th Inning:', '6th Inning:', '7th Inning:', '8th Inning:', '9th Inning:', 'Extra Innings:']
+  let homeacc = 0;
+  let awayacc = 0;
+  let finalscore = [];
+  for(let i=0; i<innings;i++){
+    let newCount=()=>{
+      return function(){
+        homeacc = homeacc+(callback(0,2))
+        awayacc = awayacc+(callback(0,2))
+        return [homeacc, awayacc];
+      }}
+    const newCount1 = newCount();
+    newCount1();
+    finalscore.push(`${inningtext[i]} ${homeacc} - ${awayacc}`);
+  }
+  finalscore.push (`Final Score: ${homeacc} - ${awayacc}`)
+  return finalscore;
+}
+
+
+console.log(scoreboard(inning, 9))
